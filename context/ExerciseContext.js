@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import { Loading } from "../components";
 import { getExercises } from "../services/exercises";
 
 export const ExerciseContext = createContext();
@@ -11,7 +12,7 @@ export const ExerciseContextProvider = ({ children }) => {
 
   const value = { data };
 
-  if (!data) return <div>Loading...</div>;
+  if (!data) return <Loading />;
   return (
     <ExerciseContext.Provider value={value}>
       {children}

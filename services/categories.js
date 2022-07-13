@@ -13,6 +13,7 @@ export const getCategories = async () => {
           title
           createdAt
           slug
+          id
           categories {
             name
             slug

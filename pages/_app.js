@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <PostContextProvider>
         <ExerciseContextProvider>
-          <main className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 min-h-screen">
+          <main className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 mb-[10%] min-h-screen">
             <NavigationBar />
             <Component {...pageProps} />
           </main>

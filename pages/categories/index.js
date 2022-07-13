@@ -1,57 +1,20 @@
+import Link from "next/link";
 import { useContext } from "react";
-import { Posts } from "../../components";
 import { PostContext } from "../../context/PostContext";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 
 const Categories = () => {
   const { categories } = useContext(PostContext);
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 3, // optional, default to 1.
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 768 },
-      items: 2,
-      slidesToSlide: 2, // optional, default to 1.
-    },
-    mobile: {
-      breakpoint: { max: 2000, min: 0 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
-  };
   return (
     <>
-      {categories.map((category) => (
-        <div
-          key={category.id}
-          className="mx-auto w-full shadow-md rounded-sm p-2"
-        >
-          <h1 className="text-xl font-bold my-4">{category.name}</h1>
-          <Carousel
-            showDots={true}
-            responsive={responsive}
-            ssr={true} // means to render carousel on server-side.
-            infinite={true}
-            autoPlay={true}
-            autoPlaySpeed={3000}
-            keyBoardControl={true}
-            customTransition="all 1"
-            transitionDuration={2000}
-            containerClass="carousel-container"
-            removeArrowOnDeviceType={["mobile"]}
-            dotListClass="custom-dot-list-style"
-            itemClass="carousel-item-padding-40-px"
-          >
-            {category.posts.map((post) => (
-              <Posts post={post} />
-            ))}
-          </Carousel>
-        </div>
-      ))}
+      <div className="flex flex-wrap gap-2">
+        {categories.map((category) => (
+          <Link href={`/categories/${category.slug}`} key={category.id}>
+            <a className="bg-sky-300 p-2 rounded-sm sm:hover:bg-sky-400 dark:bg-green-200 dark:text-green-500 dark:sm:hover:bg-green-500 dark:sm:hover:text-green-200">
+              {category.name}
+            </a>
+          </Link>
+        ))}
+      </div>
     </>
   );
 };

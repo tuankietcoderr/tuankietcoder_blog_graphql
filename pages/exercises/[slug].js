@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { getExerciseBySlug } from "../../services/exercises";
+import { Loading } from "../../components";
 
 const ExerciseDetail = () => {
   const router = useRouter();
@@ -10,7 +11,7 @@ const ExerciseDetail = () => {
       getExerciseBySlug(router.query.slug).then((res) => setData(res));
     }
   }, []);
-  if (!data) return <div>Loading...</div>;
+  if (!data) return <Loading />;
   return <div>ExerciseDetail</div>;
 };
 

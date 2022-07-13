@@ -21,7 +21,7 @@ const Posts = ({ post }) => {
             <h2 className="text-xl font-extrabold text-gray-900 dark:text-white my-4">
               {post.title}
             </h2>
-            <p>{post.excerpt}</p>
+            <p className="dark:text-white/[0.8]">{post.excerpt}</p>
             <div className="flex gap-x-2 flex-wrap mt-2">
               Danh mục:{" "}
               {post.categories.map((category) => (

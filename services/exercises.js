@@ -6,6 +6,7 @@ export const getExercises = async () => {
   const query = gql`
     query GetExercises {
       exercises {
+        id
         views
         title
         slug

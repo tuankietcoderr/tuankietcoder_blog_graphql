@@ -7,8 +7,10 @@
     font-family: "Be Vietnam Pro", sans-serif;
   }
   p > img {
-    @apply w-full;
-    @apply rounded-md;
+    @apply w-full rounded-md;
+  }
+  p > a {
+    @apply dark:text-green-200;
   }
   pre code * {
     @apply font-bold;
