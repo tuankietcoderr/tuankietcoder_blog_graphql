@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { PostContext } from "../../context/PostContext";
 import { useRouter } from "next/router";
 import { getPostsByCategory } from "../../services/categories";

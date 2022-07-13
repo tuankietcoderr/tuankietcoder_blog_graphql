@@ -10,5 +10,4 @@ module.exports = {
   plugins: [require("@tailwindcss/typography")],
   darkMode: "class",
   mode: "jit",
-  purge: ["./components/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
 };
