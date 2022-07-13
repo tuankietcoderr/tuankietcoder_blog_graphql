@@ -6,14 +6,24 @@
     "start": "next start"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.4",
+    "axios": "^0.27.2",
+    "graphql": "^16.5.0",
+    "graphql-request": "^4.3.0",
+    "html-react-parser": "^3.0.1",
+    "moment": "^2.29.4",
     "next": "latest",
-    "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "node": "^18.5.0",
+    "prismjs": "^1.28.0",
+    "react": "^18.2.0",
+    "react-bootstrap-icons": "^1.8.4",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^8.0.3",
+    "react-multi-carousel": "^2.8.2",
+    "rehype-raw": "^6.1.1",
+    "remark-gfm": "^3.0.1"
   },
   "devDependencies": {
-    "@types/node": "17.0.35",
-    "@types/react": "18.0.9",
-    "@types/react-dom": "18.0.5",
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.1.2",
