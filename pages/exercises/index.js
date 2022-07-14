@@ -1,10 +1,16 @@
 import { useContext } from "react";
 import { ExerciseContext } from "../../context/ExerciseContext";
+import { Exercises } from "../../components";
 
-const Exercises = () => {
-  const { data } = useContext(ExerciseContext);
-  console.log(data);
-  return <div>Exercises</div>;
+const AllExercises = () => {
+  const { exercises } = useContext(ExerciseContext);
+  return (
+    <>
+      {exercises.map((exercise) => (
+        <Exercises key={exercise.id} exercise={exercise} />
+      ))}
+    </>
+  );
 };
 
-export default Exercises;
+export default AllExercises;

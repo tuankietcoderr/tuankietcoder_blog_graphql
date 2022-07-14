@@ -11,7 +11,6 @@ export const getPosts = async () => {
         slug
         title
         featuredImage
-        views
         description
         updatedAt
         createdAt
@@ -41,7 +40,6 @@ export const getPostBySlug = async (slug) => {
         id
         slug
         title
-        views
         description
         createdAt
         updatedAt

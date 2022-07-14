@@ -7,13 +7,14 @@ export const getExercises = async () => {
     query GetExercises {
       exercises {
         id
-        views
         title
         slug
+        excerpt
         updatedAt
         createdAt
         fileUrl
         description
+        featuredImage
       }
     }
   `;
@@ -27,13 +28,15 @@ export const getExerciseBySlug = async (slug) => {
   const query = gql`
     query MyQuery($slug: String!) {
       exercise(where: { slug: $slug }) {
-        views
+        id
         title
         slug
+        excerpt
         updatedAt
         createdAt
         fileUrl
         description
+        featuredImage
       }
     }
   `;

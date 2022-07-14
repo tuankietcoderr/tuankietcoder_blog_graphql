@@ -5,14 +5,14 @@ import { getExercises } from "../services/exercises";
 export const ExerciseContext = createContext();
 
 export const ExerciseContextProvider = ({ children }) => {
-  const [data, setData] = useState(null);
+  const [exercises, setExercises] = useState(null);
   useEffect(() => {
-    getExercises().then((res) => setData(res));
+    getExercises().then((res) => setExercises(res));
   }, []);
 
-  const value = { data };
+  const value = { exercises };
 
-  if (!data) return <Loading />;
+  if (!exercises) return <Loading />;
   return (
     <ExerciseContext.Provider value={value}>
       {children}
