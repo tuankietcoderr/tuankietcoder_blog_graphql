@@ -31,7 +31,10 @@ const NavigationBar = () => {
       <header className="sticky top-[-1px] z-[9999] bg-white shadow-sm sm:shadow-none my-10 py-2 px-2 dark:bg-gray-900">
         <nav className="flex justify-between">
           <Link href="/" passHref>
-            <a className="flex flex-col items-center justify-center">Kiet</a>
+            <a className="flex flex-col items-center justify-center">
+              {/*! LOGO */}
+              {process.env.NEXT_PUBLIC_BLOG_NAME}
+            </a>
           </Link>
           <ul className="hidden sm:flex">
             {navItem.map(({ item, link }) => (

@@ -12,6 +12,7 @@ import { getPostBySlug } from "../../services/posts";
 import { highlightCode } from "../../utils/highlight-code";
 import { imageAlt } from "../../utils/image-alt";
 import { PostContext } from "../../context/PostContext";
+import Head from "next/head";
 
 const PostDetail = () => {
   const router = useRouter();
@@ -32,6 +33,13 @@ const PostDetail = () => {
   if (!data) return <Loading />;
   return (
     <>
+      <Head>
+        <title>
+          {process.env.NEXT_PUBLIC_BLOG_NAME} | Bài viết | {data.title}
+        </title>
+        <meta property="og: image" content={data.featuredImage} />
+        <meta property="og: description" content={data.excerpt} />
+      </Head>
       <div className="xl:grid xl:grid-cols-3 text-justify gap-4">
         <div className="prose  dark:text-white/[0.8] md:prose-lg lg:prose-xl col-span-2 dark:prose-headings:text-white mx-auto w-full">
           <div className="relative w-full">

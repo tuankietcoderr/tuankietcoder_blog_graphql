@@ -1,11 +1,15 @@
 import Link from "next/link";
 import { useContext } from "react";
 import { PostContext } from "../../context/PostContext";
+import Head from "next/head";
 
 const Categories = () => {
   const { categories } = useContext(PostContext);
   return (
     <>
+      <Head>
+        <title>{process.env.NEXT_PUBLIC_BLOG_NAME} | Danh mục</title>
+      </Head>
       <div className="flex flex-wrap gap-2">
         {categories.map((category) => (
           <Link href={`/categories/${category.slug}`} key={category.id}>

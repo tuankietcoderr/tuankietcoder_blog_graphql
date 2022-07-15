@@ -1,4 +1,5 @@
 import moment from "moment";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import Prism from "prismjs";
 import "prismjs/plugins/line-numbers/prism-line-numbers";
@@ -34,6 +35,13 @@ const ExerciseDetail = () => {
   if (!data) return <Loading />;
   return (
     <>
+      <Head>
+        <title>
+          {process.env.NEXT_PUBLIC_BLOG_NAME} | Bài tập | {data?.title}
+        </title>
+        <meta property="og: image" content={data.featuredImage} />
+        <meta property="og: description" content={data.excerpt} />
+      </Head>
       <div className="text-justify">
         <div className="prose  dark:text-white/[0.8] md:prose-lg lg:prose-xl dark:prose-headings:text-white mx-auto w-full">
           <div className="relative w-full">

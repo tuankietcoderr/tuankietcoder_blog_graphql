@@ -17,6 +17,7 @@ import "prismjs/components/prism-tsx";
 import "prismjs/components/prism-go";
 import "prismjs/components/prism-php";
 import "prismjs/components/prism-java";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   return (

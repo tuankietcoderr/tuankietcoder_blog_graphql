@@ -3,6 +3,7 @@ import { PostContext } from "../../context/PostContext";
 import { useRouter } from "next/router";
 import { getPostsByCategory } from "../../services/categories";
 import { Loading, Posts } from "../../components";
+import Head from "next/head";
 
 const Category = () => {
   const { categories } = useContext(PostContext);
@@ -22,9 +23,17 @@ const Category = () => {
     }
   }, [router.isReady, router.query.slug]);
   if (!data) return <Loading />;
-  console.log(data);
   return (
     <>
+      <Head>
+        <title>
+          {process.env.NEXT_PUBLIC_BLOG_NAME} | Danh mục |{" "}
+          {
+            categories.find((category) => category.slug === router.query.slug)
+              ?.name
+          }
+        </title>
+      </Head>
       {data.map((post) => (
         <Posts key={post.id} post={post} />
       ))}
