@@ -33,7 +33,7 @@ class MyDocument extends Document {
             content="width=device-width, initial-scale=1.0, shrink-to-fit=no, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
           />
           {/* <!--  Page description -- > */}
-          <meta name="description" content="no more than 150 characters" />
+          {/* <meta name="description" content="no more than 150 characters" /> */}
           {/* <!--  Page keywords -- > */}
           <meta
             name="keywords"
@@ -171,9 +171,6 @@ class MyDocument extends Document {
 
           {/* <!--  Sns social tag begin -- > */}
           {/* <!--  Refer to microblog API -- > */}
-          <meta property="og: type" content="type" />
-          <meta property="og: URL" content="tuankietcoder.vercel.app" />
-          <meta property="og: title" content="K Blog | Blog dành cho Coder" />
           {/* <meta property="og: image" content="/icon-256x256.png" /> */}
           <link rel="icon" href="/icon-256x256.png" />
 

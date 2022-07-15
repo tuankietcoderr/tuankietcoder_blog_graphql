@@ -39,6 +39,21 @@ const PostDetail = () => {
         </title>
         <meta property="og: image" content={data.featuredImage} />
         <meta property="og: description" content={data.excerpt} />
+        <meta property="og:description" content={data.excerpt} />
+        <meta property="description" content={data.excerpt} />
+        <meta property="og:title" content={data.title} />
+        <meta property="title" content={data.title} />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:url"
+          content={`https://tuankietcoder.vercel.app/posts/${data.slug}`}
+        />
+        <meta
+          property="og:site_name"
+          content={process.env.NEXT_PUBLIC_BLOG_NAME}
+        />
+        <meta property="og:locale" content="vi_VN" />
+        <meta property="og:locale:alternate" content="en_US" />
       </Head>
       <div className="xl:grid xl:grid-cols-3 text-justify gap-4">
         <div className="prose  dark:text-white/[0.8] md:prose-lg lg:prose-xl col-span-2 dark:prose-headings:text-white mx-auto w-full">

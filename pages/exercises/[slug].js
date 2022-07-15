@@ -39,8 +39,23 @@ const ExerciseDetail = () => {
         <title>
           {process.env.NEXT_PUBLIC_BLOG_NAME} | Bài tập | {data?.title}
         </title>
-        <meta property="og: image" content={data.featuredImage} />
-        <meta property="og: description" content={data.excerpt} />
+        <meta property="og:image" content={data.featuredImage} />
+        <meta property="image" content={data.featuredImage} />
+        <meta property="og:description" content={data.excerpt} />
+        <meta property="description" content={data.excerpt} />
+        <meta property="og:title" content={data.title} />
+        <meta property="title" content={data.title} />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:url"
+          content={`https://tuankietcoder.vercel.app/exercises/${data.slug}`}
+        />
+        <meta
+          property="og:site_name"
+          content={process.env.NEXT_PUBLIC_BLOG_NAME}
+        />
+        <meta property="og:locale" content="vi_VN" />
+        <meta property="og:locale:alternate" content="en_US" />
       </Head>
       <div className="text-justify">
         <div className="prose  dark:text-white/[0.8] md:prose-lg lg:prose-xl dark:prose-headings:text-white mx-auto w-full">
